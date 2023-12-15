@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="rus">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #b4ffbb;
+            color: #000000;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #000000;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #6def79;
+            color: #666666;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #dadada;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Таблица по возрастанию цены</h1>
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th>Индекс</th>
+                <th>ID в БД</th>
+                <th>Цена в рублях</th>
+                <th>Ссылка</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in answer %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ p[0] }}</td>
+                    <td>{{ '%0.2f' % p[1] }}</td>
+                    <td>{{ p[2] }}</td>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
