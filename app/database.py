@@ -70,7 +70,6 @@ def sort_desc():
     with sqlite3.connect(config.db_name) as conn:
         cursor = conn.cursor()
     answers = cursor.execute('SELECT id, price, link FROM source ORDER BY price DESC').fetchall()
-    print(answers)
     return answers
 
 
