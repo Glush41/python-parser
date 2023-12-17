@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def main_page():
-    return 'Привет, если хочешь увидить таблицу по возрастанию цены ghjghghhghg добавь "/asc" к URL. Если по убыванию - "/desc"'
+    return 'Привет, если хочешь увидить таблицу по возрастанию цены добавь "/asc" к URL. Если по убыванию - "/desc"'
 
 
 @app.route("/desc")
