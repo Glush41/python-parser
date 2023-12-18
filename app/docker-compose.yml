@@ -8,4 +8,4 @@ services:
     volumes:
       - ./DB:/app/data
 volumes:
-  database:
+  DB:
